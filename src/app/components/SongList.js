@@ -3,13 +3,13 @@ import { connect } from "react-redux";
 
 class SongList extends React.Component {
   render() {
-    return <div>song list</div>;
+    console.log(this.props);
+    return <div>song list {this.props.songs[0].title}</div>;
   }
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
-  return state;
+  return { songs: state.songs };
 };
 
 export default connect(mapStateToProps)(SongList);
