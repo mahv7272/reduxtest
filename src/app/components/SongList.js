@@ -4,7 +4,6 @@ import { selectedSong } from "../actions";
 
 class SongList extends React.Component {
   render() {
-    console.log(this.props);
     return (
       <div>
         <p>song list</p>

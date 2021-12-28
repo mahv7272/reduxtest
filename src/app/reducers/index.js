@@ -1,7 +1,4 @@
-import {combineReducers,} from "redux"
-
-
-
+import { combineReducers } from "redux";
 
 const songReducer = () => {
   return [
@@ -12,14 +9,14 @@ const songReducer = () => {
   ];
 };
 
-const selectedSongReducer = (selectedSong = null, action) => {
+const selectedSongReducer = (selectedSong = "kandam", action) => {
   if (action.type === "SONG_SELECTED") {
     return action.payload.song;
   }
   return selectedSong;
 };
- 
+
 export default combineReducers({
-    songs: songReducer,
-    selectedSong:selectedSongReducer
-})
+  songs: songReducer,
+  selectedSong: selectedSongReducer,
+});
