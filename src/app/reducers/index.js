@@ -15,8 +15,14 @@ const selectedSongReducer = (selectedSong = "kandam", action) => {
   }
   return selectedSong;
 };
-
+const ApiReducer = (state = "a", action) => {
+  if (action.type === "FETCH_DATA") {
+    return action.payload;
+  }
+  return state;
+};
 export default combineReducers({
   songs: songReducer,
   selectedSong: selectedSongReducer,
+  post:ApiReducer,
 });

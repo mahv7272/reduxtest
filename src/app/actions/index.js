@@ -9,15 +9,11 @@ export const selectedSong = (song) => {
   };
 };
 
-export const fetchData = () => {
-  return async (dispatch) => {
-    const response = await Api.get("/post");
-    dispatch({
-      type: "FETCH_DATA",
-      payload: response,
-    });
-  };
-  // return {
-  //   type: "FETCH_DATA",
-  // };
+export const fetchData = () => async (dispatch) => {
+  const response = await Api.get("/posts");
+  console.log("res", response.data[1].title);
+  dispatch({
+    type: "FETCH_DATA",
+    payload: response.data[1].title,
+  });
 };
